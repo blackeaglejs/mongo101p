@@ -1,0 +1,24 @@
+Storage Engines 
+Decides what to put in memory and what to take out, which is used to optimize database design. 
+Affects data file format.
+
+
+Two main ones in Mongo: 
+MMAP - default 
+WiredTiger - bought in 2014. 
+
+Storage Engine doesn't change API to programmer. 
+There are some differences in performance. 
+
+MMAP Storange Engine 
+The way MMAP works is that it turns the database files into files in virtual memory. 
+Allows collection level locking/concurrency. 
+Allows in-place updating. 
+We use power of two sizes - which allows you to open more space than is needed. 
+Operating system makes the decision of what's in memory and what's in disk. 
+
+WiredTiger Storage Engines 
+It's faster for a lot of things. 
+Does not offer locking - instead has document level concurrency.
+Allows document compression and index compression.
+wiredTiger cannot read files from mmap v1
