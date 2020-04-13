@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: school
+      hosts:
+        - localhost:27017
